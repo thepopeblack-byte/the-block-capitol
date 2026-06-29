@@ -1,0 +1,8 @@
+services:
+  block-capitol:
+    build: .
+    image: block-capitol:latest
+    container_name: block-capitol
+    restart: unless-stopped
+    ports:
+      - "3000:80"
