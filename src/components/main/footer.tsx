@@ -16,7 +16,7 @@ const Footer = () => {
       {/* Logo and Subscription */}
       <div className="flex flex-col md:flex-row item-center justify-between border-b border-gray-700 pb-4">
         <motion.img
-          src="./footer-logo.png"
+          src="/footer-logo.png"
           alt="Block Capitol Logo"
           className="w-24"
           initial={{ opacity: 0, y: -10 }}
@@ -47,6 +47,7 @@ const Footer = () => {
         <div className="mt-8 textcenter md:tex-left">
           <h3 className="text-lg font-semibold">Quick Links:</h3>
           <ul className="mt-2 space-y-2 text-gray-300">
+            <li><Link to="/events" className="hover:text-white">Events</Link></li>
             <li className="hover:text-white cursor-pointer">About Us</li>
             <li className="hover:text-white cursor-pointer">Contact</li>
             <li className="hover:text-white cursor-pointer">FAQs</li>
