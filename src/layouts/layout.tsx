@@ -16,7 +16,7 @@ const metadata: Record<string, { title: string; description: string }> = {
   },
 };
 export default function RootLayout() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key: navigationKey } = useLocation();
   const previousPath = useRef(pathname);
   useEffect(() => {
     const pageChanged = previousPath.current !== pathname;
@@ -49,7 +49,7 @@ export default function RootLayout() {
       else window.scrollTo({ top: 0, behavior: "instant" });
     });
     return () => cancelAnimationFrame(frame);
-  }, [pathname, hash]);
+  }, [pathname, hash, navigationKey]);
   return (
     <>
       <a className="skip-link" href="#main-content">
