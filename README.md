@@ -38,12 +38,12 @@ git push -u origin main
 
 ## Build and push Docker image
 
-Replace `YOUR_REGISTRY_USERNAME` with your Docker Hub username or use `ghcr.io/YOUR_GITHUB_USERNAME/the-block-capitol` for GitHub Container Registry.
+The production Docker Hub repository is `popeblack/the-block-capitol`. Use a new versioned tag for each release.
 
 ```bash
 docker login
-docker build -t YOUR_REGISTRY_USERNAME/the-block-capitol:latest .
-docker push YOUR_REGISTRY_USERNAME/the-block-capitol:latest
+docker build -t popeblack/the-block-capitol:YOUR_RELEASE_TAG .
+docker push popeblack/the-block-capitol:YOUR_RELEASE_TAG
 ```
 
 Then update `docker-compose.secretvm.yml` to use the same image name.
@@ -54,8 +54,8 @@ Recommended production path:
 
 1. Build and push the Docker image to Docker Hub or GHCR.
 2. Update `docker-compose.secretvm.yml` with the pushed image.
-3. In the SecretAI portal, create a SecretVM and upload `docker-compose.secretvm.yml`.
-4. Map port `3000` in the SecretVM/public endpoint to container port `80`.
-5. Add any runtime environment variables in the portal only if needed.
+3. Update the existing `sapphire-tarsier` SecretVM (The Blockcapitol) with `docker-compose.secretvm.yml`, preserving filesystem persistence.
+4. The production compose includes Traefik on ports `80` and `443` and routes HTTPS for `theblockcapitol.com`, `www.theblockcapitol.com`, and `sapphire-tarsier.vm.scrtlabs.com` to the app on container port `80`.
+5. Preserve the `letsencrypt` volume so certificates survive updates. Port `3000` is used by the local compose files only.
 
 Local build compose is included as `docker-compose.local.yml`; the SecretVM compose should pull a registry image unless you are using SecretVM's additional-file/archive flow.
