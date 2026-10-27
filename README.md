@@ -2,6 +2,8 @@
 
 React + Vite website for The Block Capitol.
 
+Requires Node.js 22.12 or newer. The production container builds with Node 22 and serves static files through nginx.
+
 ## Local development
 
 ```bash
@@ -12,8 +14,7 @@ npm run dev
 ## Production build test
 
 ```bash
-npm run lint
-npm run build
+npm run check
 npm run preview
 ```
 
@@ -28,12 +29,9 @@ Open: http://localhost:3000
 ## Push source code to GitHub
 
 ```bash
-git init
 git add .
-git commit -m "Initial The Block Capitol website deployment"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
+git commit -m "Describe the website update"
+git push origin main
 ```
 
 ## Build and push Docker image
@@ -59,3 +57,11 @@ Recommended production path:
 5. Preserve the `letsencrypt` volume so certificates survive updates. Port `3000` is used by the local compose files only.
 
 Local build compose is included as `docker-compose.local.yml`; the SecretVM compose should pull a registry image unless you are using SecretVM's additional-file/archive flow.
+
+## Website content and behavior
+
+- Edit event dates, RSVP links, the community link, and the curriculum in `src/data/site.ts`.
+- Shared layout, page metadata, and route scrolling are in `src/layouts/layout.tsx`.
+- The site uses existing Telegram and social links for contact. It has no newsletter subscription or payment backend.
+- `npm run check` runs ESLint across JavaScript and TypeScript, then checks types and builds the production site.
+- nginx serves `/` and `/events`, redirects `/events/`, and returns HTTP 404 with the React recovery page for unknown routes. Add an nginx route if you add another client-side page.

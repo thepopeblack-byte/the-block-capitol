@@ -1,6 +1,1 @@
-import React from "react";
-import HomePage from "../../../components/main/index";
-
-export default function Home() {
-  return <HomePage />;
-}
+export { default } from "../../../components/main";

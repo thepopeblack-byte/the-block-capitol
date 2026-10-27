@@ -1,22 +1,18 @@
-import React from "react";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./components/main";
-import NotFound from './app/pages/not-found';
+import NotFound from "./app/pages/not-found";
 import EventsPage from "./app/pages/events";
+import RootLayout from "./layouts/layout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/events",
-    element: <EventsPage />,
-  },
-  {
-    path: "*", 
-    element: <NotFound />,
+    element: <RootLayout />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/events", element: <EventsPage /> },
+      { path: "*", element: <NotFound /> },
+    ],
   },
 ]);
 

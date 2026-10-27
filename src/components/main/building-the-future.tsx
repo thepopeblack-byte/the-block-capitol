@@ -1,80 +1,55 @@
-import { motion } from "framer-motion";
-import { Button } from "../form/button";
-import React, { useRef } from "react";
-import { useIsInView } from "../../hooks/use-inview";
-
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 export default function BuildingTheFuture() {
-  const ref = useRef(null);
-  const isInView = useIsInView(ref);
-
   return (
-    <div className="bg-white p-12 app_container" ref={ref}>
-      <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-12 bg-[#FEF0EE] rounded-2xl gap-10">
-        {/* Image Section */}
-        <div className="w-full flex justify-center items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0, rotate: -5 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative -full border-[10px] border-[#FFD2D2] rounded-[48px] shadow-lg overflow-hidden"
-          >
-            <img
-              src="./hero-lady.png"
-              alt="Focused Woman"
-              width={500}
-              height={400}
-              className="rounded-lg object-cover"
-              style={{ objectPosition: "center", transform: "scale(1.1)" }}
-            />
-          </motion.div>
-        </div>
-
-        {/* Content Section */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          className="mt-6 lg:mt-0 w-full text-center lg:text-right mr-0 lg:mr-12"
-        >
-          <h1 className="text-2xl lg:text-4xl font-bold text-secondary leading-snug">
-            Building the Future of <br /> Blockchain, Together
-          </h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
-            className="bg-[#FFD2D2] border border-white text-lg shadow-lg px-6 py-4 rounded-md mt-4 inline-block w-fit leading-6"
-          >
-            We've stumbled, learned, and gotten better;
-            <br className="max-md:hidden" /> Real proof of learning from
-            mistakes.
-          </motion.div>
-
-          <p className="text-gray-700 mt-4 text-lg leading-relaxed">
-            At BlockCapitol, we have learned our fair share of lessons along the
-            way to innovation. Our team has experienced successes and failures
-            in the blockchain environment. In order to have a positive learning
-            environment, we believe it is important to be open and honest about
-            our experiences, both positive and difficult. Join us, and learn
-            from our journey as you embark on your own.
+    <section
+      className="section-space"
+      id="building-the-future"
+      aria-labelledby="story-title"
+    >
+      <div className="site-container story-grid">
+        <figure className="story-photos">
+          <img
+            src="/group-1.png"
+            alt="Developers discussing a project during a community session"
+            width="520"
+            height="326"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="/group-2.png"
+            alt="BlockCapitol members collaborating around laptops"
+            width="560"
+            height="361"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            Learning, building, and figuring it out together.
+          </figcaption>
+        </figure>
+        <div className="story-copy">
+          <p className="eyebrow">Progress happens together</p>
+          <h2 className="section-title" id="story-title">
+            Real people.
+            <br />
+            Shared progress.
+          </h2>
+          <p className="section-copy">
+            Great learning leaves room for questions, experiments, and the
+            occasional wrong turn. We’ve had our share of all three.
           </p>
-
-          {/* Buttons */}
-          <div className="mt-6 flex flex-col sm:flex-row items-center lg:justify-end justify-center gap-4">
-            <Button
-              text="Start Your Journey"
-              variant="primary"
-              className=""
-            />
-            <Button
-              text="Explore Programs"
-              variant="secondary"
-              className=""
-            />
-          </div>
-        </motion.div>
-      </section>
-    </div>
+          <p className="section-copy">
+            At The BlockCapitol, we share what we learn, support one another
+            through challenges, and keep building. You don’t have to figure out
+            your next step alone.
+          </p>
+          <Link className="text-link" to="/#join-network">
+            Find your community <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }

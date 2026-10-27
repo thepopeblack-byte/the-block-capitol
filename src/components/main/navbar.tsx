@@ -1,164 +1,116 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { communityUrl } from "../../data/site";
 
-const navItems: { name: string; sectionId?: string; link?: string }[] = [
-  { name: "Home", sectionId: "hero" },
-  { name: "About", sectionId: "who-we-are" },
-  { name: "Programmes", sectionId: "blockchain-courses" },
-  { name: "Events", link: "/events" },
-  { name: "Community", sectionId: "join-network" },
-  // { name: "Blog", link: "/blog" },
-  { name: "Contact", sectionId: "footer" },
+const navItems = [
+  { name: "Home", to: "/" },
+  { name: "About", to: "/#who-we-are" },
+  { name: "Programmes", to: "/#blockchain-courses" },
+  { name: "Events", to: "/events" },
+  { name: "Community", to: "/#join-network" },
 ];
-
-const Navbar = () => {
-  const { pathname, hash } = useLocation();
-  const [isSticky, setIsSticky] = useState(false);
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { pathname, hash } = useLocation();
+  const headerRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    setIsOpen(false);
-    if (pathname === "/" && hash) {
-      const frame = requestAnimationFrame(() => {
-        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: "smooth" });
-      });
-      return () => cancelAnimationFrame(frame);
-    }
-  }, [pathname, hash]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
+    if (!isOpen) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        toggleRef.current?.focus();
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+    const onOutside = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) setIsOpen(false);
     };
-  }, []);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // Handle smooth scrolling for section navigation
-  const handleScroll = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsOpen(false); // Close mobile menu after clicking
-  };
-
+    const desktop = window.matchMedia("(min-width: 1050px)");
+    const onDesktop = () => {
+      if (desktop.matches) setIsOpen(false);
+    };
+    document.addEventListener("keydown", onEscape);
+    document.addEventListener("pointerdown", onOutside);
+    desktop.addEventListener("change", onDesktop);
+    return () => {
+      document.removeEventListener("keydown", onEscape);
+      document.removeEventListener("pointerdown", onOutside);
+      desktop.removeEventListener("change", onDesktop);
+    };
+  }, [isOpen]);
   return (
-    <nav
-      aria-label="Main navigation"
-      className={`flex justify-between items-center py-4 px-6 md:px-12 lg:px-24 fixed top-0 left-0 right-0 z-20 transition-all ${pathname !== "/" || isSticky ? "bg-white/95 backdrop-blur-sm" : "bg-transparent"
-        }`}
-    >
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Link to="/" aria-label="The BlockCapitol home"><img src="/main-logo.png" alt="The BlockCapitol" width={50} height={50} /></Link>
-      </motion.div>
-      <motion.ul
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="hidden lg:flex space-x-6 text-secondary font-medium"
-      >
-        {navItems.map(({ name, sectionId, link }) => (
-          <li key={name} className="relative group cursor-pointer">
-            {sectionId ? (
-              <Link
-                to={`/#${sectionId}`}
-                onClick={(e) => {
-                  if (pathname === "/") {
-                    e.preventDefault();
-                    handleScroll(sectionId);
-                  }
-                }}
-                className="hover:text-red-800 transition-colors duration-300"
-              >
-                {name}
-              </Link>
-            ) : (
-              <Link
-                to={link!}
-                aria-current={pathname === link ? "page" : undefined}
-                className="hover:text-red-800 transition-colors duration-300"
-              >
-                {name}
-              </Link>
-            )}
-            <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-red-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </li>
-        ))}
-      </motion.ul>
-      <motion.button
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="hidden lg:block bg-secondary hover:bg-red-700 text-white px-4 py-2 rounded"
-      >
-        Join Cohort
-      </motion.button>
-      <div className="lg:hidden flex items-center">
-        <button onClick={toggleMenu} className="text-dark" aria-label={isOpen ? "Close navigation" : "Open navigation"} aria-expanded={isOpen} aria-controls="mobile-navigation">
-          {isOpen ? <X /> : <Menu size={20} />}
+    <header className="site-header" ref={headerRef}>
+      <div className="site-container header-inner">
+        <Link
+          className="brand"
+          to="/"
+          aria-label="The BlockCapitol home"
+          onClick={() => setIsOpen(false)}
+        >
+          <img src="/main-logo.png" alt="" width="42" height="46" />
+          <span>
+            <span className="brand-small">The</span>
+            <span>
+              Block<span className="brand-accent">Capitol</span>
+            </span>
+          </span>
+        </Link>
+        <nav
+          className={isOpen ? "main-nav is-open" : "main-nav"}
+          id="main-navigation"
+          aria-label="Main navigation"
+        >
+          {navItems.map(({ name, to }) => (
+            <Link
+              key={name}
+              to={to}
+              aria-current={`${pathname}${hash}` === to ? "page" : undefined}
+              onClick={() => {
+                setIsOpen(false);
+                if (`${pathname}${hash}` === to) {
+                  if (hash)
+                    document.getElementById(hash.slice(1))?.scrollIntoView();
+                  else window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+            >
+              {name}
+            </Link>
+          ))}
+          <a
+            className="button button-primary mobile-community-link"
+            href={communityUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join the community <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
+        </nav>
+        <a
+          className="button button-primary header-cta"
+          href={communityUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join the community <ArrowUpRight size={17} aria-hidden="true" />
+        </a>
+        <button
+          className="menu-toggle"
+          type="button"
+          ref={toggleRef}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isOpen}
+          aria-controls="main-navigation"
+        >
+          {isOpen ? (
+            <X size={23} aria-hidden="true" />
+          ) : (
+            <Menu size={23} aria-hidden="true" />
+          )}
         </button>
       </div>
-      {isOpen && (
-        <motion.ul
-          id="mobile-navigation"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="absolute top-20 left-0 right-0 flex flex-col items-center space-y-4 p-4 text-secondary text-left font-medium lg:hidden h-[calc(100dvh-80px)] overflow-y-auto bg-white"
-        >
-          {navItems.map(({ name, sectionId, link }) => (
-            <li key={name} className="relative group cursor-pointer px-3">
-              {sectionId ? (
-                <Link
-                  to={`/#${sectionId}`}
-                  onClick={(e) => {
-                    if (pathname === "/") {
-                      e.preventDefault();
-                      handleScroll(sectionId);
-                    }
-                  }}
-                  className="hover:text-red-800 transition-colors duration-300"
-                >
-                  {name}
-                </Link>
-              ) : (
-                <Link
-                  to={link!}
-                  aria-current={pathname === link ? "page" : undefined}
-                  className="hover:text-red-800 transition-colors duration-300"
-                  onClick={toggleMenu}
-                >
-                  {name}
-                </Link>
-              )}
-              <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-red-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-            </li>
-          ))}
-          <button className="bg-secondary hover:bg-red-700 text-white px-4 py-3 rounded">
-            Join Cohort
-          </button>
-        </motion.ul>
-      )}
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

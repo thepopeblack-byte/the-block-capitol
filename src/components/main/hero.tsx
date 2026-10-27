@@ -1,90 +1,75 @@
-import { motion } from "framer-motion";
-import Navbar from "./navbar";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, BookOpen, Code2, Sprout, Users } from "lucide-react";
 import { Button } from "../form/button";
-import React from "react";
-
 export default function HeroSection() {
   return (
-    <section className="relative -bg-gradient-to-r from-red-50 to-white text-center px-6md:px-12lg:px-24 py-12 bg-[url(/src/assets/hero-image.png)] bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden">
-      {/* Navigation Bar */}
-      <Navbar />
-
-      {/* Hero Content */}
-      <div className="pt-24 ">
-        {/* Add padding-top to avoid overlap with sticky navbar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="mt-10 text-center max-md:px-8"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold">
-            Make the Switch to <span className="text-primary italic">Web3</span>
-          </h1>
-          <p className="text-gray-700 mt-4">
-            Don’t limit it to just web2 development; decentralize your skills
-            with us.
-          </p>
-
-          {/* Buttons */}
-          <div className="mt-6 flex max-md:flex-col justify-center gap-4">
-            <Button
-              text="Break Into Web3"
-              variant="primary"
-              className="max-md:!min-w-20"
-            />
-            <Button
-              text="Decentralize your Code"
-              variant="secondary"
-              className="max-md:!min-w-20"
-            />
+    <section className="home-hero" id="hero" aria-labelledby="hero-title">
+      <div className="site-container">
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">A home for builders · Kaduna, Nigeria</p>
+            <h1 id="hero-title">
+              Build your skills.
+              <br />
+              Build <span>what’s next.</span>
+            </h1>
+            <p>
+              Turn your curiosity into real-world skills. Learn blockchain,
+              build useful solutions, and grow alongside a community that moves
+              you forward.
+            </p>
+            <div className="hero-actions">
+              <Button text="Explore programmes" href="/#blockchain-courses" />
+              <Link className="text-link" to="/events">
+                Discover our events{" "}
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            </div>
+            <div className="hero-note">
+              <Sprout size={17} aria-hidden="true" /> Your ideas belong here.
+              Your next chapter starts here.
+            </div>
           </div>
-        </motion.div>
-        {/* Images */}
-        <div className="relative mt-32 flex justify-center items-center -mb-25 md:-mb-48">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0, rotate: -5 }}
-            transition={{ duration: 1 }}
-            className="relative z-10 w-[200px] md:w-[400px] lg:w-[500px] border-[5px] md:border-[10px] border-[#FFD2D2] rounded-[18px] md:rounded-[48px] shadow-lg overflow-hidden "
-          >
+          <figure className="hero-visual">
             <img
-              src="./hero-lady.png" // Update with your image path
-              alt="Focused Woman"
-              width={500}
-              height={400}
-              className="rounded-lg object-cover"
-              style={{ objectPosition: "center", transform: "scale(1.1)" }}
+              src="/community-learning.jpg"
+              alt="Community members learning together at a BlockCapitol workshop"
+              width="1000"
+              height="1041"
+              fetchPriority="high"
             />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0, rotate: 5 }}
-            transition={{ duration: 1 }}
-            className="absolute -left-14 lg:left-32  xl:left-72  -bottom10 w-[250px] md:w-[450px] border-[5px] md:border-[10px] border-[#FFD2D2] rounded-[48px] shadow-lg overflow-hidden"
-          >
-            <img
-              src="./group-1.png" // Update with your image path
-              alt="Group Collaboration"
-              width={450}
-              height={150}
-              className="rounded-lg"
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50, scale: 1.2 }}
-            animate={{ opacity: 1, x: 0, rotate: -3, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="absolute -right-10 lg:right-32  xl:right-72  -bottom10 w-[250px] md:w-[450px] border-[5px] md:border-[10px] border-[#FFD2D2] rounded-[48px] shadow-lg overflow-hidden"
-          >
-            <img
-              src="./group-2.png" // Update with your image path
-              alt="Teamwork"
-              width={450}
-              height={150}
-              className="rounded-lg"
-            />
-          </motion.div>
+            <span className="photo-index">THE BLOCKCAPITOL COMMUNITY</span>
+            <figcaption className="hero-photo-label">
+              <Code2 size={28} strokeWidth={1.5} aria-hidden="true" />
+              <div>
+                <strong>Big ideas start with people.</strong>
+                <span>Learn. Build. Belong.</span>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div className="hero-principles">
+          <div>
+            <BookOpen size={23} strokeWidth={1.5} aria-hidden="true" />
+            <div>
+              <strong>Learn by doing</strong>
+              <p>Practical skills, real understanding.</p>
+            </div>
+          </div>
+          <div>
+            <Code2 size={23} strokeWidth={1.5} aria-hidden="true" />
+            <div>
+              <strong>Build with purpose</strong>
+              <p>Technology for everyday challenges.</p>
+            </div>
+          </div>
+          <div>
+            <Users size={23} strokeWidth={1.5} aria-hidden="true" />
+            <div>
+              <strong>Grow together</strong>
+              <p>Mentorship, collaboration, community.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

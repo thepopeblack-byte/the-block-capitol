@@ -1,35 +1,21 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
 import { Button } from "./form/button";
-
-const NotFoundPage = () => {
-  const navigate = useNavigate();
+export default function NotFoundPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F8FAFC]">
-      <div className="flex grow items-center px-6 xl:px-10">
-        <div className="mx-auto text-center">
-          <h3 className="text-3xl md:text-4xl font-bold text-secondary">
-            Sorry, the page was not found
-          </h3>
-          <p className="mt-3 text-sm leading-loose text-gray-500 lg:mt-6 lg:text-base lg:leading-loose">
-            It is looking like you may have taken a wrong turn. Don&apos;t
-            worry... it
-            <br className="hidden sm:inline-block" />
-            happens to the best of us. Just click the button below to get back
-            on track.
-          </p>
-
-          <div className="mt-8">
-            <Button
-              onClick={() => navigate(-1)}
-              text="Go Back"
-              variant="secondary"
-            />
-          </div>
-        </div>
+    <main className="site-container not-found" id="main-content" tabIndex={-1}>
+      <p className="eyebrow">404 · A small detour</p>
+      <h1 className="section-title">
+        This page isn’t here.
+        <br />
+        Your next step still is.
+      </h1>
+      <p className="section-copy">
+        The link may have changed. Explore our programmes or see what’s
+        happening in the community.
+      </p>
+      <div className="hero-actions">
+        <Button text="Back to the homepage" href="/" />
+        <Button text="Explore events" variant="secondary" href="/events" />
       </div>
-    </div>
+    </main>
   );
-};
-
-export default NotFoundPage;
+}
