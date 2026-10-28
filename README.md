@@ -66,3 +66,4 @@ Local build compose is included as `docker-compose.local.yml`; the SecretVM comp
 - `npm run check` runs ESLint across JavaScript and TypeScript, then checks types and builds the production site.
 - nginx serves `/` and `/events`, redirects `/events/`, and returns HTTP 404 with the React recovery page for unknown routes. Add an nginx route if you add another client-side page.
 - The supplied event photo selections and placements are documented in `docs/photo-selection.md`. Optimized images are committed in `public/`; `scripts/prepare-community-photos.ps1` regenerates them from the original JPEG copies on Windows.
+- Use only the original six brand colors in `src/index.css`; the exact palette and contrast choices are documented in `docs/brand-colors.md`.

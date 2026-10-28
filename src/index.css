@@ -1,10 +1,10 @@
 @import "tailwindcss" source("./");
 @theme {
-  --color-primary: #c83d1c;
-  --color-secondary: #c83d1c;
-  --color-accent: #f1ca70;
-  --color-neutral: #6b716b;
-  --color-dark: #192622;
+  --color-primary: #ef411e;
+  --color-secondary: #fe4e16;
+  --color-accent: #feda02;
+  --color-neutral: #aaa8a2;
+  --color-dark: #181818;
   --color-white: #ffffff;
 }
 :root {
@@ -14,17 +14,20 @@
     system-ui,
     -apple-system,
     sans-serif;
-  color: #192622;
-  background: #fcfbf8;
+  color: var(--ink);
+  background: var(--paper);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --ink: #192622;
-  --muted: #646b64;
-  --paper: #fcfbf8;
-  --cream: #f3f0e8;
-  --line: #e1e3d9;
-  --orange: #c83d1c;
+  --ink: var(--color-dark);
+  --muted: var(--color-dark);
+  --paper: var(--color-white);
+  --line: var(--color-neutral);
+  --line-inverse: var(--color-neutral);
+  --orange: var(--color-primary);
+  --orange-secondary: var(--color-secondary);
+  --accent: var(--color-accent);
+  --on-dark-muted: var(--color-neutral);
 }
 html {
   scroll-behavior: smooth;
@@ -65,8 +68,8 @@ summary {
   outline-offset: 5px;
 }
 ::selection {
-  color: #192622;
-  background: #f9c8ac;
+  color: var(--ink);
+  background: var(--accent);
 }
 @media (prefers-reduced-motion: reduce) {
   html {
