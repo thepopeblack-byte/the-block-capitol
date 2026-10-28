@@ -394,7 +394,7 @@
 }
 .value-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin-top: 52px;
 }
@@ -522,19 +522,16 @@ summary::-webkit-details-marker {
 }
 .story-photos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 12px;
   align-items: start;
 }
 .story-photos img {
   display: block;
   width: 100%;
-  height: 320px;
+  height: auto;
   object-fit: cover;
   border-radius: 5px;
-}
-.story-photos img:nth-child(2) {
-  margin-top: 42px;
 }
 .story-photos figcaption {
   grid-column: 1 / -1;
@@ -840,9 +837,6 @@ summary::-webkit-details-marker {
   .story-grid {
     gap: 48px;
   }
-  .story-photos img {
-    height: 280px;
-  }
 }
 @media (min-width: 768px) and (max-width: 900px) {
   .hero-grid {
@@ -980,12 +974,6 @@ summary::-webkit-details-marker {
   .story-photos {
     max-width: 560px;
   }
-  .story-photos img {
-    height: 270px;
-  }
-  .story-photos img:nth-child(2) {
-    margin-top: 28px;
-  }
   .community-benefit {
     padding-block: 24px;
   }
@@ -1031,7 +1019,80 @@ summary::-webkit-details-marker {
   .featured-event {
     padding: 22px;
   }
-  .story-photos img {
-    height: 230px;
+}
+
+/* Hub services and learning paths */
+.service-link {
+  margin-top: 18px;
+  color: var(--orange);
+}
+.learning-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.learning-path {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 32px;
+  border: 1px solid #ffffff30;
+  border-radius: 6px;
+  background: #22342c;
+}
+.learning-path > svg {
+  color: #f6ac8f;
+  margin-bottom: 22px;
+}
+.learning-path h3 {
+  font-size: 26px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.learning-path p {
+  margin-block: 16px 26px;
+  color: #c4cdbf;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.learning-path .button,
+.learning-path .text-link {
+  margin-top: auto;
+}
+.learning-path .text-link {
+  color: #f6ac8f;
+  min-height: 50px;
+}
+.learning-path .text-link svg {
+  flex-shrink: 0;
+}
+.curriculum-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 56px;
+}
+.curriculum-heading .programme-meta {
+  margin-top: 0;
+}
+.curriculum-heading + .curriculum-grid {
+  margin-top: 22px;
+}
+@media (max-width: 767px) {
+  .learning-paths {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .learning-path {
+    padding: 24px;
+  }
+  .curriculum-heading {
+    margin-top: 40px;
+    gap: 16px;
   }
 }

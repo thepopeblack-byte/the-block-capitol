@@ -1,14 +1,70 @@
 import { ArrowUpRight, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
 import { communityUrl } from "../../data/site";
+
 const faqs = [
   {
     question: "Who is The BlockCapitol for?",
     answer: (
       <>
-        Developers moving into Web3, curious learners, and people who want to
-        build useful technology. Our community brings together different
-        backgrounds and levels of experience.
+        Founders, startups, freelancers, teams, developers, designers, and
+        curious learners. Our hub brings together coworking, cohorts,
+        incubation, and startup support in Kaduna.
+      </>
+    ),
+  },
+  {
+    question: "How can I use the coworking space?",
+    answer: (
+      <>
+        Contact our team on{" "}
+        <a href={communityUrl} target="_blank" rel="noopener noreferrer">
+          Telegram
+        </a>{" "}
+        to ask about current space options, availability, access arrangements,
+        and costs.
+      </>
+    ),
+  },
+  {
+    question: "How do I explore incubation or startup support?",
+    answer: (
+      <>
+        Tell our team about your idea or startup, the stage you’re at, and the
+        kind of support you need. We’ll discuss the available support and next
+        steps with you.
+      </>
+    ),
+  },
+  {
+    question: "Which technologies do you focus on?",
+    answer: (
+      <>
+        Our focus spans AI, blockchain, and Web3, with an interest in practical
+        digital solutions for people, local businesses, and startups.
+      </>
+    ),
+  },
+  {
+    question: "How do I join a cohort?",
+    answer: (
+      <>
+        Speak with our team on{" "}
+        <a href={communityUrl} target="_blank" rel="noopener noreferrer">
+          Telegram
+        </a>{" "}
+        about current AI and blockchain learning opportunities, cohort dates,
+        entry requirements, fees, and enrolment.
+      </>
+    ),
+  },
+  {
+    question: "How long do cohorts run?",
+    answer: (
+      <>
+        Schedules depend on the programme. Our blockchain programme runs for
+        four months. Ask our team for the confirmed schedule of any other cohort
+        or workshop you’re interested in.
       </>
     ),
   },
@@ -16,42 +72,10 @@ const faqs = [
     question: "Do I need programming experience?",
     answer: (
       <>
-        Some programming knowledge is recommended for the blockchain programme.
-        The <Link to="/events">Build Series</Link> welcomes beginners—bring your
+        Requirements depend on the opportunity. Some programming knowledge is
+        recommended for the blockchain programme. The{" "}
+        <Link to="/events">Build Series</Link> welcomes beginners—bring your
         ideas, creativity, and willingness to learn.
-      </>
-    ),
-  },
-  {
-    question: "How long is the blockchain programme?",
-    answer: (
-      <>
-        The core blockchain programme runs for four months. Workshops and events
-        have their own schedules, which you can find on our{" "}
-        <Link to="/events">Events page</Link>.
-      </>
-    ),
-  },
-  {
-    question: "How do I join the next cohort?",
-    answer: (
-      <>
-        Speak with our team on{" "}
-        <a href={communityUrl} target="_blank" rel="noopener noreferrer">
-          Telegram
-        </a>{" "}
-        for current cohort dates, entry requirements, fees, and enrolment
-        details.
-      </>
-    ),
-  },
-  {
-    question: "What can I expect to build?",
-    answer: (
-      <>
-        The curriculum covers smart contracts, tokens, dApps, testing, and
-        deployment. You’ll connect your learning through practical exercises and
-        a capstone project.
       </>
     ),
   },
@@ -64,7 +88,7 @@ const faqs = [
         <a href={communityUrl} target="_blank" rel="noopener noreferrer">
           Telegram community
         </a>{" "}
-        for updates.
+        for hub updates.
       </>
     ),
   },
@@ -81,7 +105,8 @@ export default function FAQ() {
             Clear answers.
           </h2>
           <p className="section-copy">
-            A few things you might want to know before taking your next step.
+            Get to know the space, learning opportunities, and support available
+            through our hub.
           </p>
           <a
             className="text-link"

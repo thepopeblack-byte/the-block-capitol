@@ -1,21 +1,39 @@
-import { BookOpen, Compass, Users } from "lucide-react";
-const values = [
+import {
+  Building2,
+  GraduationCap,
+  Lightbulb,
+  Rocket,
+  ArrowUpRight,
+} from "lucide-react";
+import { communityUrl } from "../../data/site";
+
+const services = [
   {
-    icon: BookOpen,
-    title: "Knowledge you can put to work.",
-    copy: "Move from concepts to code with structured learning grounded in real blockchain applications.",
+    icon: Building2,
+    title: "Coworking space",
+    copy: "A shared environment for focused work, collaboration, and connecting with other people building ideas into something real.",
+    action: "Enquire about the space",
   },
   {
-    icon: Compass,
-    title: "Guidance along the way.",
-    copy: "Get support from experienced people as you work through challenges and find your direction.",
+    icon: GraduationCap,
+    title: "Cohort hub",
+    copy: "Learn alongside others through cohorts and workshops exploring AI, blockchain, Web3, and practical digital skills.",
+    action: "Ask about cohorts",
   },
   {
-    icon: Users,
-    title: "A community in your corner.",
-    copy: "Meet fellow developers, share what you know, and make progress through collaboration.",
+    icon: Lightbulb,
+    title: "Incubation centre",
+    copy: "A home for early ideas. Connect with our team to explore support as you shape your concept and work through your next steps.",
+    action: "Explore incubation support",
+  },
+  {
+    icon: Rocket,
+    title: "Startup support",
+    copy: "Find guidance, collaborators, and a community to support your journey from an early idea to a growing venture.",
+    action: "Talk about your startup",
   },
 ];
+
 export default function WhoWeAre() {
   return (
     <section
@@ -26,25 +44,29 @@ export default function WhoWeAre() {
       <div className="site-container">
         <div className="about-intro">
           <div>
-            <p className="eyebrow">Why The BlockCapitol</p>
+            <p className="eyebrow">One hub. Many ways forward.</p>
             <h2 className="section-title" id="about-title">
-              Your next chapter starts with the people around you.
+              Your space.
+              <br />
+              Your next chapter.
             </h2>
           </div>
           <div className="section-copy">
             <p>
-              We’re a launchpad for developers and curious minds ready to
-              explore what technology can do. Here, practical learning meets
-              mentorship and a community that builds together.
+              The BlockCapitol is a coworking space, cohort hub, and incubation
+              centre supporting startups in Kaduna. We bring together the space
+              to work, opportunities to learn, and people who can help you move
+              forward.
             </p>
             <p>
-              From your first smart contract to a solution for a local business,
-              we help you connect what you learn with what you can create.
+              Our focus spans AI, blockchain, and Web3. Whether you’re a
+              founder, freelancer, team, or curious learner, there’s room to
+              explore what you can build here.
             </p>
           </div>
         </div>
         <div className="value-grid">
-          {values.map(({ icon: Icon, title, copy }, index) => (
+          {services.map(({ icon: Icon, title, copy, action }, index) => (
             <div className="value-item" key={title}>
               <div>
                 <Icon size={28} strokeWidth={1.5} aria-hidden="true" />
@@ -52,6 +74,15 @@ export default function WhoWeAre() {
               </div>
               <h3>{title}</h3>
               <p>{copy}</p>
+              <a
+                className="text-link service-link"
+                href={communityUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {action}
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
             </div>
           ))}
         </div>

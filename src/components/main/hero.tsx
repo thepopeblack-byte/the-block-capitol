@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, BookOpen, Code2, Sprout, Users } from "lucide-react";
+import {
+  ArrowUpRight,
+  Building2,
+  Code2,
+  Sprout,
+  GraduationCap,
+  Rocket,
+} from "lucide-react";
 import { Button } from "../form/button";
 export default function HeroSection() {
   return (
@@ -7,67 +14,69 @@ export default function HeroSection() {
       <div className="site-container">
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">A home for builders · Kaduna, Nigeria</p>
+            <p className="eyebrow">Coworking, cohorts & startups · Kaduna</p>
             <h1 id="hero-title">
-              Build your skills.
+              Space to work.
               <br />
-              Build <span>what’s next.</span>
+              Support to <span>grow.</span>
             </h1>
             <p>
-              Turn your curiosity into real-world skills. Learn blockchain,
-              build useful solutions, and grow alongside a community that moves
-              you forward.
+              A coworking space, cohort hub, and incubation centre supporting
+              startups in Kaduna. Work, learn, and build with a community
+              exploring AI, blockchain, and Web3.
             </p>
             <div className="hero-actions">
-              <Button text="Explore programmes" href="/#blockchain-courses" />
-              <Link className="text-link" to="/events">
-                Discover our events{" "}
+              <Button text="Explore our hub" href="/#who-we-are" />
+              <Link className="text-link" to="/#blockchain-courses">
+                Discover our cohorts{" "}
                 <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
             </div>
             <div className="hero-note">
-              <Sprout size={17} aria-hidden="true" /> Your ideas belong here.
-              Your next chapter starts here.
+              <Sprout size={17} aria-hidden="true" /> For founders, teams,
+              freelancers, and curious minds.
             </div>
           </div>
           <figure className="hero-visual">
             <img
-              src="/community-learning.jpg"
-              alt="Community members learning together at a BlockCapitol workshop"
-              width="1000"
-              height="1041"
+              src="/blockcapitol-builders.jpg"
+              srcSet="/blockcapitol-builders-small.jpg 640w, /blockcapitol-builders.jpg 1200w"
+              sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 900px) 600px, 50vw"
+              alt="Participants working with laptops during a session at The BlockCapitol in Kaduna"
+              width="1200"
+              height="1600"
               fetchPriority="high"
             />
             <span className="photo-index">THE BLOCKCAPITOL COMMUNITY</span>
             <figcaption className="hero-photo-label">
               <Code2 size={28} strokeWidth={1.5} aria-hidden="true" />
               <div>
-                <strong>Big ideas start with people.</strong>
-                <span>Learn. Build. Belong.</span>
+                <strong>A home for your next idea.</strong>
+                <span>Work. Learn. Build.</span>
               </div>
             </figcaption>
           </figure>
         </div>
         <div className="hero-principles">
           <div>
-            <BookOpen size={23} strokeWidth={1.5} aria-hidden="true" />
+            <Building2 size={23} strokeWidth={1.5} aria-hidden="true" />
             <div>
-              <strong>Learn by doing</strong>
-              <p>Practical skills, real understanding.</p>
+              <strong>Work alongside others</strong>
+              <p>A shared space to focus and collaborate.</p>
             </div>
           </div>
           <div>
-            <Code2 size={23} strokeWidth={1.5} aria-hidden="true" />
+            <GraduationCap size={23} strokeWidth={1.5} aria-hidden="true" />
             <div>
-              <strong>Build with purpose</strong>
-              <p>Technology for everyday challenges.</p>
+              <strong>Learn in cohorts</strong>
+              <p>AI, blockchain, and practical digital skills.</p>
             </div>
           </div>
           <div>
-            <Users size={23} strokeWidth={1.5} aria-hidden="true" />
+            <Rocket size={23} strokeWidth={1.5} aria-hidden="true" />
             <div>
-              <strong>Grow together</strong>
-              <p>Mentorship, collaboration, community.</p>
+              <strong>Move your startup forward</strong>
+              <p>Community, incubation, and support.</p>
             </div>
           </div>
         </div>

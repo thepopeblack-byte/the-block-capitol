@@ -5,9 +5,9 @@ import Footer from "../components/main/footer";
 
 const metadata: Record<string, { title: string; description: string }> = {
   "/": {
-    title: "The BlockCapitol — Learn. Build. Belong.",
+    title: "The BlockCapitol — Coworking, AI & Startup Hub",
     description:
-      "Build your skills and your next chapter with The BlockCapitol in Kaduna. Explore practical blockchain learning, mentorship, community, and the Build Series.",
+      "A coworking space, cohort hub, incubation centre, and startup support community in Kaduna. Work, learn, and build across AI, blockchain, and Web3.",
   },
   "/events": {
     title: "Events — The BlockCapitol Build Series, Kaduna",
@@ -24,7 +24,7 @@ export default function RootLayout() {
     const meta = metadata[pathname] ?? {
       title: "Page not found — The BlockCapitol",
       description:
-        "Find your way back to The BlockCapitol programmes, community, and events.",
+        "Find your way back to The BlockCapitol coworking space, cohorts, startup support, community, and events.",
     };
     document.title = meta.title;
     document

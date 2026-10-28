@@ -5,8 +5,8 @@ import { communityUrl } from "../../data/site";
 
 const navItems = [
   { name: "Home", to: "/" },
-  { name: "About", to: "/#who-we-are" },
-  { name: "Programmes", to: "/#blockchain-courses" },
+  { name: "Our hub", to: "/#who-we-are" },
+  { name: "Cohorts", to: "/#blockchain-courses" },
   { name: "Events", to: "/events" },
   { name: "Community", to: "/#join-network" },
 ];
@@ -84,7 +84,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Join the community <ArrowUpRight size={17} aria-hidden="true" />
+            Talk to our team <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </nav>
         <a
@@ -93,7 +93,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Join the community <ArrowUpRight size={17} aria-hidden="true" />
+          Talk to our team <ArrowUpRight size={17} aria-hidden="true" />
         </a>
         <button
           className="menu-toggle"

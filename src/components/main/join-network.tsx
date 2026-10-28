@@ -5,17 +5,17 @@ const benefits = [
   {
     icon: Users,
     title: "Meet people who get it.",
-    copy: "Connect with developers, designers, entrepreneurs, and people who share your curiosity.",
+    copy: "Connect with founders, freelancers, teams, developers, designers, and people exploring AI, blockchain, and Web3.",
   },
   {
     icon: Network,
-    title: "Make room for collaboration.",
-    copy: "Exchange ideas, explore projects, and learn from different experiences and perspectives.",
+    title: "Make room for your next idea.",
+    copy: "Share a workspace, exchange ideas, explore projects, and find collaborators with different skills and perspectives.",
   },
   {
     icon: MessageCircle,
     title: "Keep the conversation going.",
-    copy: "Find community updates, ask questions, and hear about workshops and opportunities to build.",
+    copy: "Ask about coworking, cohorts, incubation, and startup support. Hear about workshops, community gatherings, and opportunities to build.",
   },
 ];
 export default function JoinNetwork() {
@@ -27,17 +27,17 @@ export default function JoinNetwork() {
     >
       <div className="site-container community-grid">
         <div className="community-copy">
-          <p className="eyebrow">More than a learning programme</p>
+          <p className="eyebrow">A community for work, learning & growth</p>
           <h2 className="section-title" id="community-title">
             Good things get
             <br />
             built together.
           </h2>
           <p className="section-copy">
-            Come for the skills. Stay for the people.
+            Come to work, learn, or develop an idea. Stay for the people.
             <br />
-            Be part of a community of engineers, builders, and innovators
-            exploring what comes next.
+            Join founders, teams, freelancers, and innovators building across
+            AI, blockchain, Web3, and digital solutions.
           </p>
           <Button text="Join us on Telegram" href={communityUrl} />
           <p className="community-note">

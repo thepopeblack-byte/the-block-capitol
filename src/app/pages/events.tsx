@@ -45,8 +45,8 @@ export default function EventsPage() {
             <br />A community to <span>build with.</span>
           </h1>
           <p>
-            Meet the people, explore the ideas, and build the solutions shaping
-            our community.
+            Workshops, build sprints, and gatherings for founders, teams, and
+            people exploring AI, blockchain, Web3, and digital solutions.
           </p>
         </header>
 
@@ -204,6 +204,65 @@ export default function EventsPage() {
             </p>
           </section>
         </article>
+        <section
+          className="events-container past-events"
+          aria-labelledby="past-events-title"
+        >
+          <p className="events-eyebrow">Previously at the hub</p>
+          <h2 className="section-title" id="past-events-title">
+            Real people. Shared experiences.
+          </h2>
+          <p className="section-copy">
+            A few moments from past learning sessions and community gatherings
+            at The BlockCapitol.
+          </p>
+          <div className="past-events-grid">
+            <figure>
+              <a
+                href="/blockcapitol-community.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View the community group photo (opens in a new tab)"
+              >
+                <img
+                  src="/blockcapitol-community.jpg"
+                  alt="A group of participants together in front of The BlockCapitol wall after a community event"
+                  width="1400"
+                  height="1050"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>
+                <h3>Community, in person.</h3>
+                <p>Meet the people who make the hub a place to belong.</p>
+              </figcaption>
+            </figure>
+            <figure>
+              <a
+                href="/blockcapitol-workshop.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View the workshop audience photo (opens in a new tab)"
+              >
+                <img
+                  src="/blockcapitol-workshop.jpg"
+                  alt="Participants listening together during a workshop in The BlockCapitol space"
+                  width="960"
+                  height="960"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <figcaption>
+                <h3>Learning, together.</h3>
+                <p>
+                  Space for new skills, shared ideas, and useful conversations.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
       </main>
     </div>
   );

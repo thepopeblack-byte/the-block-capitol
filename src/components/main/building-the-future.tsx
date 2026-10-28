@@ -10,40 +10,32 @@ export default function BuildingTheFuture() {
       <div className="site-container story-grid">
         <figure className="story-photos">
           <img
-            src="/group-1.png"
-            alt="Developers discussing a project during a community session"
-            width="520"
-            height="326"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            src="/group-2.png"
-            alt="BlockCapitol members collaborating around laptops"
-            width="560"
-            height="361"
+            src="/blockcapitol-ai-session.jpg"
+            alt="A facilitator discussing AI productivity with participants beside The BlockCapitol's branded wall"
+            width="1200"
+            height="900"
             loading="lazy"
             decoding="async"
           />
           <figcaption>
-            Learning, building, and figuring it out together.
+            An AI productivity session at The BlockCapitol, Kaduna.
           </figcaption>
         </figure>
         <div className="story-copy">
-          <p className="eyebrow">Progress happens together</p>
+          <p className="eyebrow">A home for ideas and the people behind them</p>
           <h2 className="section-title" id="story-title">
-            Real people.
+            From an idea
             <br />
-            Shared progress.
+            to what comes next.
           </h2>
           <p className="section-copy">
-            Great learning leaves room for questions, experiments, and the
-            occasional wrong turn. We’ve had our share of all three.
+            Building a startup or developing a new skill takes space to think,
+            people to learn with, and support when the next step feels unclear.
           </p>
           <p className="section-copy">
-            At The BlockCapitol, we share what we learn, support one another
-            through challenges, and keep building. You don’t have to figure out
-            your next step alone.
+            The BlockCapitol connects coworking, cohort learning, incubation,
+            and startup support in one community. Bring your idea, your team, or
+            your curiosity about AI and Web3—and explore your next step with us.
           </p>
           <Link className="text-link" to="/#join-network">
             Find your community <ArrowUpRight size={16} aria-hidden="true" />

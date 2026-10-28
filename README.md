@@ -1,6 +1,6 @@
 # The Block Capitol
 
-React + Vite website for The Block Capitol.
+React + Vite website for The BlockCapitol: a coworking space, cohort hub, incubation centre, and startup support community in Kaduna, with a focus on AI, blockchain, and Web3.
 
 Requires Node.js 22.12 or newer. The production container builds with Node 22 and serves static files through nginx.
 
@@ -65,3 +65,4 @@ Local build compose is included as `docker-compose.local.yml`; the SecretVM comp
 - The site uses existing Telegram and social links for contact. It has no newsletter subscription or payment backend.
 - `npm run check` runs ESLint across JavaScript and TypeScript, then checks types and builds the production site.
 - nginx serves `/` and `/events`, redirects `/events/`, and returns HTTP 404 with the React recovery page for unknown routes. Add an nginx route if you add another client-side page.
+- The supplied event photo selections and placements are documented in `docs/photo-selection.md`. Optimized images are committed in `public/`; `scripts/prepare-community-photos.ps1` regenerates them from the original JPEG copies on Windows.

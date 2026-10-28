@@ -23,14 +23,15 @@ export default function Footer() {
           <div>
             <p className="eyebrow">Your next chapter starts here</p>
             <h2>
-              Bring your curiosity.
+              Work. Learn.
               <br />
-              Find your people.
+              Build your next chapter.
             </h2>
           </div>
           <div>
             <p>
-              Have a question, an idea, or a project in mind?
+              Looking for a place to work, a cohort, or support for your
+              startup?
               <br />
               Let’s start a conversation.
             </p>
@@ -57,9 +58,8 @@ export default function Footer() {
               </span>
             </Link>
             <p>
-              A home for the people building what’s next.
-              <br />
-              Learn. Build. Belong.
+              Coworking. Cohorts. Incubation. Startup support.
+              <br />A hub for AI, blockchain & Web3 in Kaduna.
             </p>
             <span className="footer-location">
               <MapPin size={15} aria-hidden="true" /> Kaduna, Nigeria
@@ -67,8 +67,8 @@ export default function Footer() {
           </div>
           <nav aria-label="Explore BlockCapitol">
             <h3>Explore</h3>
-            <Link to="/#who-we-are">About us</Link>
-            <Link to="/#blockchain-courses">Programmes</Link>
+            <Link to="/#who-we-are">Our space & support</Link>
+            <Link to="/#blockchain-courses">Cohorts & learning</Link>
             <Link to="/events">Events</Link>
             <Link to="/#faq">FAQs</Link>
           </nav>
