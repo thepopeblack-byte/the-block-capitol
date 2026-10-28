@@ -219,10 +219,6 @@ export default function EventsPage() {
             <p className="events-partner">
               In partnership with <strong>Africa’s Talking</strong>
             </p>
-            <p className="events-tags">
-              #BlockCapitol #BuildSeries #BuildWithAT #ATdevsNG #Web3
-              #BuildInKaduna #Developers #TechCommunity
-            </p>
           </section>
         </article>
         <section

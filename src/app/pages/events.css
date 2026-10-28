@@ -332,14 +332,6 @@
 .events-partner strong {
   color: var(--ink);
 }
-.events-tags {
-  max-width: 700px;
-  margin: 20px auto 0;
-  font-size: 11px;
-  line-height: 2;
-  color: var(--muted);
-  word-spacing: 6px;
-}
 @media (max-width: 1049px) {
   .events-container {
     width: calc(100% - 56px);
