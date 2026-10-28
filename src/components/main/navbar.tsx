@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowUpRight, Menu, X } from "lucide-react";
-import { communityUrl } from "../../data/site";
+import { Mail, Menu, X } from "lucide-react";
+import { contactEmailUrl } from "../../data/site";
 
 const navItems = [
   { name: "Home", to: "/" },
@@ -80,20 +80,13 @@ export default function Navbar() {
           ))}
           <a
             className="button button-primary mobile-community-link"
-            href={communityUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={contactEmailUrl}
           >
-            Talk to our team <ArrowUpRight size={17} aria-hidden="true" />
+            Email our team <Mail size={17} aria-hidden="true" />
           </a>
         </nav>
-        <a
-          className="button button-primary header-cta"
-          href={communityUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Talk to our team <ArrowUpRight size={17} aria-hidden="true" />
+        <a className="button button-primary header-cta" href={contactEmailUrl}>
+          Email our team <Mail size={17} aria-hidden="true" />
         </a>
         <button
           className="menu-toggle"

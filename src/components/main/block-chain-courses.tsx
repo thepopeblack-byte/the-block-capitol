@@ -7,7 +7,7 @@ import {
   ArrowDown,
 } from "lucide-react";
 import { Button } from "../form/button";
-import { communityUrl, courses } from "../../data/site";
+import { contactEmailUrl, courses } from "../../data/site";
 
 export default function BlockchainCourses() {
   return (
@@ -46,7 +46,7 @@ export default function BlockchainCourses() {
             <Button
               text="Ask about AI learning"
               variant="light"
-              href={communityUrl}
+              href={contactEmailUrl}
             />
           </article>
           <article className="learning-path">
@@ -98,7 +98,7 @@ export default function BlockchainCourses() {
           <Button
             text="Talk to the cohort team"
             variant="light"
-            href={communityUrl}
+            href={contactEmailUrl}
           />
         </div>
       </div>

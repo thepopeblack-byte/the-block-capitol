@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, MapPin } from "lucide-react";
-import { FaLinkedinIn, FaTelegramPlane, FaYoutube } from "react-icons/fa";
-import { communityUrl } from "../../data/site";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { contactEmail, contactEmailUrl, whatsappUrl } from "../../data/site";
 const socials = [
-  { name: "Telegram", href: communityUrl, icon: FaTelegramPlane },
+  { name: "WhatsApp group", href: whatsappUrl, icon: FaWhatsapp },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/theblockcapitol",
@@ -35,14 +35,8 @@ export default function Footer() {
               <br />
               Let’s start a conversation.
             </p>
-            <a
-              className="button button-primary"
-              href={communityUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Talk to us on Telegram{" "}
-              <ArrowUpRight size={18} aria-hidden="true" />
+            <a className="button button-primary" href={contactEmailUrl}>
+              Email our team <Mail size={18} aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -64,6 +58,10 @@ export default function Footer() {
             <span className="footer-location">
               <MapPin size={15} aria-hidden="true" /> Kaduna, Nigeria
             </span>
+            <a className="footer-email" href={contactEmailUrl}>
+              <Mail size={15} aria-hidden="true" />
+              <span>{contactEmail}</span>
+            </a>
           </div>
           <nav aria-label="Explore BlockCapitol">
             <h3>Explore</h3>

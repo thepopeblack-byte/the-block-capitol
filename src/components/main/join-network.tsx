@@ -1,6 +1,6 @@
 import { MessageCircle, Network, Users } from "lucide-react";
 import { Button } from "../form/button";
-import { communityUrl } from "../../data/site";
+import { whatsappUrl } from "../../data/site";
 const benefits = [
   {
     icon: Users,
@@ -15,7 +15,7 @@ const benefits = [
   {
     icon: MessageCircle,
     title: "Keep the conversation going.",
-    copy: "Ask about coworking, cohorts, incubation, and startup support. Hear about workshops, community gatherings, and opportunities to build.",
+    copy: "Stay up to date with workshops, community gatherings, and opportunities to build.",
   },
 ];
 export default function JoinNetwork() {
@@ -39,7 +39,7 @@ export default function JoinNetwork() {
             Join founders, teams, freelancers, and innovators building across
             AI, blockchain, Web3, and digital solutions.
           </p>
-          <Button text="Join us on Telegram" href={communityUrl} />
+          <Button text="Join our WhatsApp group" href={whatsappUrl} />
           <p className="community-note">
             A place to ask, share, connect, and grow.
           </p>

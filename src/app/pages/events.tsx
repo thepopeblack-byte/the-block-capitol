@@ -9,7 +9,7 @@ import {
   Blocks,
   ArrowRight,
 } from "lucide-react";
-import { buildSeries } from "../../data/site";
+import { buildSeries, contactEmail, contactEmailUrl } from "../../data/site";
 import "./events.css";
 
 const rsvpUrl = buildSeries.rsvpUrl;
@@ -195,6 +195,10 @@ export default function EventsPage() {
             >
               luma.com/wriypu2h <ArrowUpRight size={14} aria-hidden="true" />
             </a>
+            <p className="events-contact">
+              Questions about this event?{" "}
+              <a href={contactEmailUrl}>{contactEmail}</a>
+            </p>
             <p className="events-partner">
               In partnership with <strong>Africa’s Talking</strong>
             </p>

@@ -318,6 +318,17 @@
   font-size: 13px;
   color: var(--muted);
 }
+.events-contact {
+  margin-top: 28px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.events-contact a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
 .events-partner strong {
   color: var(--ink);
 }

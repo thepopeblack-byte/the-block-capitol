@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mail } from "lucide-react";
 interface ButtonProps {
   text: string;
   variant?: "primary" | "secondary" | "light";
@@ -20,6 +20,13 @@ export function Button({
       <button type="button" className={classes} onClick={onClick}>
         {text}
       </button>
+    );
+  if (href.startsWith("mailto:"))
+    return (
+      <a className={classes} href={href}>
+        {text}
+        <Mail size={18} aria-hidden="true" />
+      </a>
     );
   if (href.startsWith("https://"))
     return (

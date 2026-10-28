@@ -1,6 +1,6 @@
-import { ArrowUpRight, Plus } from "lucide-react";
+import { Mail, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
-import { communityUrl } from "../../data/site";
+import { contactEmail, contactEmailUrl, whatsappUrl } from "../../data/site";
 
 const faqs = [
   {
@@ -17,12 +17,9 @@ const faqs = [
     question: "How can I use the coworking space?",
     answer: (
       <>
-        Contact our team on{" "}
-        <a href={communityUrl} target="_blank" rel="noopener noreferrer">
-          Telegram
-        </a>{" "}
-        to ask about current space options, availability, access arrangements,
-        and costs.
+        Email our team at <a href={contactEmailUrl}>{contactEmail}</a> to ask
+        about current space options, availability, access arrangements, and
+        costs.
       </>
     ),
   },
@@ -30,9 +27,9 @@ const faqs = [
     question: "How do I explore incubation or startup support?",
     answer: (
       <>
-        Tell our team about your idea or startup, the stage you’re at, and the
-        kind of support you need. We’ll discuss the available support and next
-        steps with you.
+        Email <a href={contactEmailUrl}>{contactEmail}</a> about your idea or
+        startup, the stage you’re at, and the kind of support you need. We’ll
+        discuss the available support and next steps with you.
       </>
     ),
   },
@@ -49,12 +46,9 @@ const faqs = [
     question: "How do I join a cohort?",
     answer: (
       <>
-        Speak with our team on{" "}
-        <a href={communityUrl} target="_blank" rel="noopener noreferrer">
-          Telegram
-        </a>{" "}
-        about current AI and blockchain learning opportunities, cohort dates,
-        entry requirements, fees, and enrolment.
+        Email our team at <a href={contactEmailUrl}>{contactEmail}</a> about
+        current AI and blockchain learning opportunities, cohort dates, entry
+        requirements, fees, and enrolment.
       </>
     ),
   },
@@ -85,8 +79,8 @@ const faqs = [
       <>
         Visit our <Link to="/events">Events page</Link> for the Build Series and
         follow the{" "}
-        <a href={communityUrl} target="_blank" rel="noopener noreferrer">
-          Telegram community
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          WhatsApp group
         </a>{" "}
         for hub updates.
       </>
@@ -108,14 +102,8 @@ export default function FAQ() {
             Get to know the space, learning opportunities, and support available
             through our hub.
           </p>
-          <a
-            className="text-link"
-            href={communityUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Still have a question? Talk to us{" "}
-            <ArrowUpRight size={16} aria-hidden="true" />
+          <a className="text-link" href={contactEmailUrl}>
+            Email us with your question <Mail size={16} aria-hidden="true" />
           </a>
         </div>
         <div className="faq-list">

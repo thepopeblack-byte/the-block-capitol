@@ -1,4 +1,7 @@
-export const communityUrl = "https://t.me/theblockcapitol";
+export const contactEmail = "admin@theblockcapitol.com";
+export const contactEmailUrl = `mailto:${contactEmail}`;
+export const whatsappUrl =
+  "https://chat.whatsapp.com/DxFc0h7uzye0RVtWAHQtHW?s=cl&p=a&mlu=4&ilr=4&iam=2";
 export const buildSeries = {
   title: "The BlockCapitol Build Series",
   dates: "November 9, 10 & 12, 2026",

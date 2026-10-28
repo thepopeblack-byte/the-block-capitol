@@ -708,6 +708,27 @@ summary::-webkit-details-marker {
 .site-footer .brand-accent {
   color: var(--orange);
 }
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  max-width: 100%;
+  color: var(--paper);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footer-email svg {
+  flex-shrink: 0;
+}
+.footer-email span,
+.faq-item a {
+  overflow-wrap: anywhere;
+}
+.footer-email:hover {
+  color: var(--accent);
+}
 .footer-grid nav {
   display: flex;
   flex-direction: column;

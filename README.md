@@ -60,9 +60,9 @@ Local build compose is included as `docker-compose.local.yml`; the SecretVM comp
 
 ## Website content and behavior
 
-- Edit event dates, RSVP links, the community link, and the curriculum in `src/data/site.ts`.
+- Edit event dates, RSVP links, the admin email, WhatsApp group link, and curriculum in `src/data/site.ts`.
 - Shared layout, page metadata, and route scrolling are in `src/layouts/layout.tsx`.
-- The site uses existing Telegram and social links for contact. It has no newsletter subscription or payment backend.
+- Enquiries use `admin@theblockcapitol.com`; community links use the supplied WhatsApp group invite. Both are configured in `src/data/site.ts`. It has no newsletter subscription or payment backend.
 - `npm run check` runs ESLint across JavaScript and TypeScript, then checks types and builds the production site.
 - nginx serves `/` and `/events`, redirects `/events/`, and returns HTTP 404 with the React recovery page for unknown routes. Add an nginx route if you add another client-side page.
 - The supplied event photo selections and placements are documented in `docs/photo-selection.md`. Optimized images are committed in `public/`; `scripts/prepare-community-photos.ps1` regenerates them from the original JPEG copies on Windows.

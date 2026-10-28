@@ -3,9 +3,9 @@ import {
   GraduationCap,
   Lightbulb,
   Rocket,
-  ArrowUpRight,
+  Mail,
 } from "lucide-react";
-import { communityUrl } from "../../data/site";
+import { contactEmailUrl } from "../../data/site";
 
 const services = [
   {
@@ -74,14 +74,9 @@ export default function WhoWeAre() {
               </div>
               <h3>{title}</h3>
               <p>{copy}</p>
-              <a
-                className="text-link service-link"
-                href={communityUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a className="text-link service-link" href={contactEmailUrl}>
                 {action}
-                <ArrowUpRight size={15} aria-hidden="true" />
+                <Mail size={15} aria-hidden="true" />
               </a>
             </div>
           ))}
