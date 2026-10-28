@@ -10,6 +10,42 @@ export const buildSeries = {
   rsvpUrl: "https://luma.com/wriypu2h",
   flyer: "/build-series-kaduna.png",
 };
+export const edgeWalletEvent = {
+  title: "Edge Wallet at The BlockCapitol",
+  organizer: "Edge Wallet",
+  venue: "The BlockCapitol, Kaduna",
+  logo: "/partners/edge-wallet-logo.png",
+  description:
+    "A look back at a community event organized by Edge Wallet at our hub, bringing people together to learn, share ideas, and connect.",
+  photos: [
+    {
+      src: "/events/edge-wallet-community.jpg",
+      alt: "Participants together at the Edge Wallet event, holding Edge-branded boxes and stickers",
+      caption: "A community brought together by Edge Wallet.",
+    },
+    {
+      src: "/events/edge-wallet-session.jpg",
+      alt: "Attendees seated around a table with Edge-branded materials during the event at The BlockCapitol",
+      caption: "Conversations, shared learning, and new connections.",
+    },
+  ],
+};
+export const partners = [
+  {
+    name: "Africa’s Talking",
+    role: "Build Series partner",
+    logo: null,
+    href: "/events#build-series-kaduna",
+    action: "Explore the Build Series",
+  },
+  {
+    name: "Edge Wallet",
+    role: "Community event organizer and partner",
+    logo: edgeWalletEvent.logo,
+    href: "/events#edge-wallet-community",
+    action: "See the past event",
+  },
+];
 export const courses = [
   {
     title: "Blockchain fundamentals",

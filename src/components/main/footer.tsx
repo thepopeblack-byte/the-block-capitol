@@ -68,6 +68,7 @@ export default function Footer() {
             <Link to="/#who-we-are">Our space & support</Link>
             <Link to="/#blockchain-courses">Cohorts & learning</Link>
             <Link to="/events">Events</Link>
+            <Link to="/#partners">Partners</Link>
             <Link to="/#faq">FAQs</Link>
           </nav>
           <nav aria-label="Connect with BlockCapitol">

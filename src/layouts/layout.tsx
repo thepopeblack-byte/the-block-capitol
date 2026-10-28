@@ -10,9 +10,9 @@ const metadata: Record<string, { title: string; description: string }> = {
       "A coworking space, cohort hub, incubation centre, and startup support community in Kaduna. Work, learn, and build across AI, blockchain, and Web3.",
   },
   "/events": {
-    title: "Events — The BlockCapitol Build Series, Kaduna",
+    title: "Events & Past Gatherings — The BlockCapitol",
     description:
-      "Join the BlockCapitol Build Series in Kaduna on November 9, 10 and 12, 2026. Three days of AI, blockchain, mentorship and building. Beginners welcome.",
+      "Explore the 2026 BlockCapitol Build Series and past community events in Kaduna, including an event organized by Edge Wallet.",
   },
 };
 export default function RootLayout() {

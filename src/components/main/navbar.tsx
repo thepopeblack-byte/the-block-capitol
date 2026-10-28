@@ -65,7 +65,12 @@ export default function Navbar() {
             <Link
               key={name}
               to={to}
-              aria-current={`${pathname}${hash}` === to ? "page" : undefined}
+              aria-current={
+                `${pathname}${hash}` === to ||
+                (pathname === "/events" && to === "/events")
+                  ? "page"
+                  : undefined
+              }
               onClick={() => {
                 setIsOpen(false);
                 if (`${pathname}${hash}` === to) {

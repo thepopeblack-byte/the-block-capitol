@@ -14,3 +14,15 @@ IMG_2671 is a useful alternative to the selected AI photograph. IMG_2661 and IMG
 The public assets are resized JPEGs with orientation applied and no copied EXIF metadata. No people or scene content have been generated or altered. Smaller hero sources, explicit image dimensions, and lazy loading for supporting photographs keep the pages efficient. The past-event gallery is separate from the upcoming Build Series listing.
 
 To regenerate on Windows, run `scripts/prepare-community-photos.ps1 -SourceDirectory <folder-containing-the-JPEG-copies>` from PowerShell. It requires the original filenames above and writes only the five selected public assets.
+
+## Edge Wallet past event
+
+The user identified Edge Wallet as the event organizer and supplied the logo and five photographs. The event entry uses a descriptive heading and credits Edge Wallet, with The BlockCapitol, Kaduna as the venue. An event date was not supplied.
+
+| Supplied image                                           | Website asset                    | Selection                                                                         |
+| -------------------------------------------------------- | -------------------------------- | --------------------------------------------------------------------------------- |
+| codex-clipboard-ddcef65c-e6e8-44ee-bb23-6f070b1d2fd9.png | events/edge-wallet-community.jpg | The wide group photograph shows the community and Edge-branded materials clearly. |
+| codex-clipboard-0f961a86-d80a-4e80-a3be-a00d13619d2b.png | events/edge-wallet-session.jpg   | The audience/table photograph adds a view of the venue and event activity.        |
+| codex-clipboard-92731636-7f41-458a-9c59-2a51885f0ee8.png | partners/edge-wallet-logo.png    | Supplied Edge logo, copied unchanged for partner recognition and event credit.    |
+
+The photographs retain their complete 4:3 composition and are optimized as JPEGs. Full-photo links are provided. The original Edge logo colors are preserved as partner artwork.

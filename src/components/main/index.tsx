@@ -6,6 +6,7 @@ import FAQ from "./faq";
 import HeroSection from "./hero";
 import JoinNetwork from "./join-network";
 import WhoWeAre from "./who-we-are";
+import Partners from "./partners";
 import { buildSeries } from "../../data/site";
 export default function HomePage() {
   return (
@@ -54,6 +55,7 @@ export default function HomePage() {
       <BlockchainCourses />
       <BuildingTheFuture />
       <JoinNetwork />
+      <Partners />
       <FAQ />
     </main>
   );

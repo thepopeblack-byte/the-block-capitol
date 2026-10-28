@@ -9,7 +9,13 @@ import {
   Blocks,
   ArrowRight,
 } from "lucide-react";
-import { buildSeries, contactEmail, contactEmailUrl } from "../../data/site";
+import {
+  buildSeries,
+  contactEmail,
+  contactEmailUrl,
+  edgeWalletEvent,
+} from "../../data/site";
+import Partners from "../../components/main/partners";
 import "./events.css";
 
 const rsvpUrl = buildSeries.rsvpUrl;
@@ -48,6 +54,17 @@ export default function EventsPage() {
             Workshops, build sprints, and gatherings for founders, teams, and
             people exploring AI, blockchain, Web3, and digital solutions.
           </p>
+          <nav className="events-page-nav" aria-label="Explore events">
+            <a className="text-link" href="#build-series-kaduna">
+              Build Series <ArrowRight size={15} aria-hidden="true" />
+            </a>
+            <a className="text-link" href="#past-events">
+              Past events <ArrowRight size={15} aria-hidden="true" />
+            </a>
+            <a className="text-link" href="#partners">
+              Partners <ArrowRight size={15} aria-hidden="true" />
+            </a>
+          </nav>
         </header>
 
         <article
@@ -210,16 +227,68 @@ export default function EventsPage() {
         </article>
         <section
           className="events-container past-events"
+          id="past-events"
           aria-labelledby="past-events-title"
         >
           <p className="events-eyebrow">Previously at the hub</p>
           <h2 className="section-title" id="past-events-title">
-            Real people. Shared experiences.
+            Past events. Shared experiences.
           </h2>
           <p className="section-copy">
             A few moments from past learning sessions and community gatherings
             at The BlockCapitol.
           </p>
+          <article
+            className="past-event-card"
+            id="edge-wallet-community"
+            aria-labelledby="edge-wallet-event-title"
+          >
+            <header className="past-event-header">
+              <div>
+                <p className="events-eyebrow">Past event</p>
+                <h3 id="edge-wallet-event-title">{edgeWalletEvent.title}</h3>
+                <p className="past-event-credit">
+                  Organized by <strong>{edgeWalletEvent.organizer}</strong> ·{" "}
+                  {edgeWalletEvent.venue}
+                </p>
+                <p className="section-copy">{edgeWalletEvent.description}</p>
+              </div>
+              <img
+                className="past-event-logo"
+                src={edgeWalletEvent.logo}
+                alt="Edge Wallet"
+                width="487"
+                height="305"
+                loading="lazy"
+                decoding="async"
+              />
+            </header>
+            <div className="past-events-grid edge-event-photos">
+              {edgeWalletEvent.photos.map(({ src, alt, caption }) => (
+                <figure key={src}>
+                  <a
+                    href={src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View full photo: ${caption} (opens in a new tab)`}
+                  >
+                    <img
+                      src={src}
+                      alt={alt}
+                      width="1080"
+                      height="810"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                  <figcaption>
+                    <p>{caption}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </article>
+          <h3 className="past-moments-title">More moments from the hub.</h3>
           <div className="past-events-grid">
             <figure>
               <a
@@ -267,6 +336,7 @@ export default function EventsPage() {
             </figure>
           </div>
         </section>
+        <Partners />
       </main>
     </div>
   );
