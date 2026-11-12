@@ -12,7 +12,7 @@ const metadata: Record<string, { title: string; description: string }> = {
   "/events": {
     title: "Events & Past Gatherings — The BlockCapitol",
     description:
-      "Explore the 2026 BlockCapitol Build Series and past community events in Kaduna, including an event organized by Edge Wallet.",
+      "Join Edge Wallet’s Meetup & Learn on November 14, 2026 at The BlockCapitol, Kaduna. Explore the Build Series and past community events.",
   },
 };
 export default function RootLayout() {

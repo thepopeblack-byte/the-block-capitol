@@ -14,6 +14,7 @@ import {
   contactEmail,
   contactEmailUrl,
   edgeWalletEvent,
+  edgeWalletMeetup,
 } from "../../data/site";
 import Partners from "../../components/main/partners";
 import "./events.css";
@@ -55,6 +56,9 @@ export default function EventsPage() {
             people exploring AI, blockchain, Web3, and digital solutions.
           </p>
           <nav className="events-page-nav" aria-label="Explore events">
+            <a className="text-link" href="#edge-wallet-meetup-kaduna">
+              Edge Wallet meetup <ArrowRight size={15} aria-hidden="true" />
+            </a>
             <a className="text-link" href="#build-series-kaduna">
               Build Series <ArrowRight size={15} aria-hidden="true" />
             </a>
@@ -66,6 +70,87 @@ export default function EventsPage() {
             </a>
           </nav>
         </header>
+
+        <article
+          className="events-container upcoming-event"
+          id="edge-wallet-meetup-kaduna"
+          aria-labelledby="edge-wallet-meetup-title"
+        >
+          <div className="events-feature">
+            <div className="events-flyer meetup-flyer">
+              <a
+                href={edgeWalletMeetup.flyer}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View the full Edge Wallet Meetup & Learn flyer (opens in a new tab)"
+              >
+                <img
+                  src={edgeWalletMeetup.flyer}
+                  alt="Edge Wallet Kaduna Meetup & Learn: Build Your Privacy. Take Control. November 14, 2026, 10 a.m. to 1 p.m., at The BlockCapitol, Independence Way, Kaduna."
+                  width="1254"
+                  height="1254"
+                  decoding="async"
+                />
+              </a>
+            </div>
+            <div className="events-details">
+              <p className="events-eyebrow">Web3 · Privacy · Self-custody</p>
+              <h2 id="edge-wallet-meetup-title">
+                Edge Wallet
+                <br />
+                <span>Meetup & Learn</span>
+              </h2>
+              <p className="events-subtitle">Build your privacy. Take control.</p>
+              <p className="events-description">
+                Ready to explore Web3, privacy, and self-custody? Join{" "}
+                {edgeWalletMeetup.organizer} as we introduce privacy-focused Web3
+                to the {edgeWalletMeetup.community} through a Meetup & Learn.
+              </p>
+              <dl className="events-facts">
+                <div>
+                  <CalendarDays aria-hidden="true" />
+                  <dt>Date</dt>
+                  <dd>
+                    <time dateTime={edgeWalletMeetup.date}>
+                      {edgeWalletMeetup.dates}
+                    </time>
+                  </dd>
+                </div>
+                <div>
+                  <Clock3 aria-hidden="true" />
+                  <dt>Time</dt>
+                  <dd>
+                    {edgeWalletMeetup.time}
+                    <small>West Africa Time (WAT)</small>
+                  </dd>
+                </div>
+                <div>
+                  <MapPin aria-hidden="true" />
+                  <dt>Venue</dt>
+                  <dd>{edgeWalletMeetup.venue}</dd>
+                </div>
+              </dl>
+              <h3 className="meetup-expect-title">What to expect</h3>
+              <ul className="meetup-topics">
+                {edgeWalletMeetup.topics.map((topic) => (
+                  <li key={topic}>{topic}</li>
+                ))}
+              </ul>
+              <a
+                className="events-cta"
+                href={edgeWalletMeetup.rsvpUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Register on Luma <ArrowUpRight size={20} aria-hidden="true" />
+              </a>
+              <p className="events-contact">
+                Questions about this event?{" "}
+                <a href={contactEmailUrl}>{contactEmail}</a>
+              </p>
+            </div>
+          </div>
+        </article>
 
         <article
           className="events-container"

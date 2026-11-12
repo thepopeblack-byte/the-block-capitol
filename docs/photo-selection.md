@@ -26,3 +26,7 @@ The user identified Edge Wallet as the event organizer and supplied the logo and
 | codex-clipboard-92731636-7f41-458a-9c59-2a51885f0ee8.png | partners/edge-wallet-logo.png    | Supplied Edge logo, copied unchanged for partner recognition and event credit.    |
 
 The photographs retain their complete 4:3 composition and are optimized as JPEGs. Full-photo links are provided. The original Edge logo colors are preserved as partner artwork.
+
+## Edge Wallet Meetup & Learn — November 14, 2026
+
+The supplied `codex-clipboard-7741c7a5-ceba-4850-b527-d5f48f757ea3.jpg` is copied unchanged to `public/events/edge-wallet-meetup-kaduna-2026.jpg`. The full 1254 × 1254 poster is shown alongside the event details and links to the complete artwork. Its original Edge Wallet colors are retained; the surrounding page uses The BlockCapitol brand palette. The poster supplies the 10 a.m.–1 p.m. time and Independence Way venue, and the user supplies the Luma registration link and Saturday date.

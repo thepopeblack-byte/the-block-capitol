@@ -30,6 +30,23 @@ export const edgeWalletEvent = {
     },
   ],
 };
+export const edgeWalletMeetup = {
+  title: "Edge Wallet Meetup & Learn",
+  date: "2026-11-14",
+  dates: "Saturday, November 14, 2026",
+  time: "10:00 AM – 1:00 PM",
+  venue: "The BlockCapitol, Independence Way, Kaduna",
+  organizer: "Edge Wallet",
+  community: "Africa’s Talking Community Kaduna",
+  rsvpUrl: "https://luma.com/lnny328h",
+  flyer: "/events/edge-wallet-meetup-kaduna-2026.jpg",
+  topics: [
+    "Web3 & privacy basics",
+    "Edge Wallet setup guide",
+    "Self-custody tips",
+    "Q&A session",
+  ],
+};
 export const partners = [
   {
     name: "Africa’s Talking",
