@@ -17,6 +17,8 @@ import {
   edgeWalletMeetup,
 } from "../../data/site";
 import Partners from "../../components/main/partners";
+import { Link } from "react-router-dom";
+import { articles } from "../../data/articles";
 import "./events.css";
 
 const rsvpUrl = buildSeries.rsvpUrl;
@@ -204,14 +206,12 @@ export default function EventsPage() {
                   <dd>{buildSeries.venue}</dd>
                 </div>
               </dl>
-              <a
+              <Link
                 className="events-cta"
-                href={rsvpUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={articles[0].path}
               >
-                RSVP on Luma <ArrowUpRight size={20} aria-hidden="true" />
-              </a>
+                Read the event recap <ArrowUpRight size={20} aria-hidden="true" />
+              </Link>
               <p className="events-welcome">
                 Beginners are welcome. Bring your ideas, creativity, and
                 willingness to build.

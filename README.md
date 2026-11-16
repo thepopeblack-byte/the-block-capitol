@@ -65,6 +65,8 @@ Local build compose is included as `docker-compose.local.yml`; the SecretVM comp
 - Enquiries use `admin@theblockcapitol.com`; community links use the supplied WhatsApp group invite. Both are configured in `src/data/site.ts`. It has no newsletter subscription or payment backend.
 - `npm run check` runs ESLint across JavaScript and TypeScript, then checks types and builds the production site.
 - nginx serves `/` and `/events`, redirects `/events/`, and returns HTTP 404 with the React recovery page for unknown routes. Add an nginx route if you add another client-side page.
+- Articles are listed at `/articles`, with a dedicated URL for each post. The first recap uses the supplied editorial copy in `src/content/build-series-kaduna.md`; its title, publication date, cover, and excerpt are in `src/data/article-metadata.js`.
+- `render-articles.mjs` runs after Vite to create article HTML with readable content, canonical URLs, Open Graph metadata, and BlogPosting structured data for direct visits and link previews. The small renderer escapes raw HTML. To add another article, extend the article data and build output, add its explicit nginx route, and update `public/sitemap.xml`.
 - The supplied event photo selections and placements are documented in `docs/photo-selection.md`. Optimized images are committed in `public/`; `scripts/prepare-community-photos.ps1` regenerates them from the original JPEG copies on Windows.
 - Use only the original six brand colors in `src/index.css`; the exact palette and contrast choices are documented in `docs/brand-colors.md`.
 - Partner entries and the past Edge Wallet event are configured in `src/data/site.ts`. The shared partner list appears on the homepage and Events page; supplied partner logos retain their own colors.

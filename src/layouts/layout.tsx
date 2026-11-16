@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/main/navbar";
 import Footer from "../components/main/footer";
+import { articles } from "../data/articles";
 
 const metadata: Record<string, { title: string; description: string }> = {
   "/": {
@@ -12,8 +13,15 @@ const metadata: Record<string, { title: string; description: string }> = {
   "/events": {
     title: "Events & Past Gatherings — The BlockCapitol",
     description:
-      "Join Edge Wallet’s Meetup & Learn on November 14, 2026 at The BlockCapitol, Kaduna. Explore the Build Series and past community events.",
+      "Explore the BlockCapitol Build Series, Edge Wallet meetups, and past community events in Kaduna.",
   },
+  "/articles": {
+    title: "Articles — Stories & Ideas from The BlockCapitol",
+    description: "Stories from The BlockCapitol community in Kaduna. Explore event recaps, emerging builders, and ideas across AI, blockchain, and entrepreneurship.",
+  },
+  ...Object.fromEntries(articles.map((article) => [article.path, {
+    title: `${article.title} — The BlockCapitol`, description: article.description,
+  }])),
 };
 export default function RootLayout() {
   const { pathname, hash, key: navigationKey } = useLocation();
@@ -27,6 +35,33 @@ export default function RootLayout() {
         "Find your way back to The BlockCapitol coworking space, cohorts, startup support, community, and events.",
     };
     document.title = meta.title;
+    const article = articles.find((entry) => entry.path === pathname);
+    const social = {
+      "og:title": meta.title,
+      "og:description": meta.description,
+      "og:url": `https://theblockcapitol.com${pathname}`,
+      "og:type": article ? "article" : "website",
+      "og:image": `https://theblockcapitol.com${article?.cover ?? "/blockcapitol-community.jpg"}`,
+      "og:image:alt": article?.coverAlt ?? "Community members together at The BlockCapitol in Kaduna",
+    };
+    for (const [property, content] of Object.entries(social)) {
+      document.querySelector(`meta[property="${property}"]`)?.setAttribute("content", content);
+    }
+    document.getElementById("article-schema")?.remove();
+    if (article) {
+      const schema = document.createElement("script");
+      schema.id = "article-schema";
+      schema.type = "application/ld+json";
+      schema.textContent = JSON.stringify({
+        "@context": "https://schema.org", "@type": "BlogPosting",
+        headline: article.title, description: article.description,
+        datePublished: article.published,
+        author: { "@type": "Organization", name: article.author, url: "https://theblockcapitol.com/" },
+        image: `https://theblockcapitol.com${article.cover}`,
+        mainEntityOfPage: `https://theblockcapitol.com${article.path}`,
+      });
+      document.head.appendChild(schema);
+    }
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute("content", meta.description);

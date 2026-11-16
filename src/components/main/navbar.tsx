@@ -8,6 +8,7 @@ const navItems = [
   { name: "Our hub", to: "/#who-we-are" },
   { name: "Cohorts", to: "/#blockchain-courses" },
   { name: "Events", to: "/events" },
+  { name: "Articles", to: "/articles" },
   { name: "Community", to: "/#join-network" },
 ];
 export default function Navbar() {
@@ -67,7 +68,8 @@ export default function Navbar() {
               to={to}
               aria-current={
                 `${pathname}${hash}` === to ||
-                (pathname === "/events" && to === "/events")
+                (pathname === "/events" && to === "/events") ||
+                (pathname.startsWith("/articles/") && to === "/articles")
                   ? "page"
                   : undefined
               }

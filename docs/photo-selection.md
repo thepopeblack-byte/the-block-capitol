@@ -29,4 +29,16 @@ The photographs retain their complete 4:3 composition and are optimized as JPEGs
 
 ## Edge Wallet Meetup & Learn — November 14, 2026
 
+
 The supplied `codex-clipboard-7741c7a5-ceba-4850-b527-d5f48f757ea3.jpg` is copied unchanged to `public/events/edge-wallet-meetup-kaduna-2026.jpg`. The full 1254 × 1254 poster is shown alongside the event details and links to the complete artwork. Its original Edge Wallet colors are retained; the surrounding page uses The BlockCapitol brand palette. The poster supplies the 10 a.m.–1 p.m. time and Independence Way venue, and the user supplies the Luma registration link and Saturday date.
+
+## Build Series article — November 16, 2026
+
+The user supplied the complete recap and four event photographs. All four are used without identifying people or assigning photos to a winning team:
+
+- `IMG_6590.jpg` → `public/articles/build-series-kaduna/community.jpg`: cover and article listing; the full group stays visible.
+- `IMG_6510.jpg` → `learning.jpg`: learning and group discussion.
+- `IMG_6556.jpg` → `proptech.jpg`: the housing challenge presented during the showcase.
+- `IMG_6581.jpg` → `demo.jpg`: a technical demonstration during the programme.
+
+JPEG copies are resized proportionally to 1800 × 1200 at quality 85, with fresh bitmap encoding to omit original metadata. Source files in Downloads are untouched. Captions describe visible activity; the copy supplies names, attendance and awards. Photos retain their original colours and the interface uses existing brand tokens.
