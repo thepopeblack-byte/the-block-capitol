@@ -21,7 +21,7 @@ export default function ArticlesPage() {
         {articles.map((article) => (
           <article className="article-card" key={article.slug}>
             <Link to={article.path} className="article-card-image" aria-label={`Read ${article.title}`}>
-              <img src={article.cover} alt={article.coverAlt} width="1800" height="1200" fetchPriority="high" />
+              <img src={article.cover} alt={article.coverAlt} width="1800" height="1200" loading="eager" />
             </Link>
             <div className="article-card-copy">
               <p className="eyebrow">{article.category}</p>
@@ -52,7 +52,7 @@ export function ArticlePage() {
           <div className="article-byline"><span>By {article.author}</span><time dateTime={article.published}>{article.publishedLabel}</time><span><Clock3 size={15} aria-hidden="true" /> {article.readingMinutes} min read</span></div>
         </header>
         <figure className="site-container article-cover">
-          <img src={article.cover} alt={article.coverAlt} width="1800" height="1200" fetchPriority="high" />
+          <img src={article.cover} alt={article.coverAlt} width="1800" height="1200" loading="eager" />
           <figcaption>{article.coverCaption}</figcaption>
         </figure>
         <div className="article-prose" dangerouslySetInnerHTML={{ __html: article.body }} />
